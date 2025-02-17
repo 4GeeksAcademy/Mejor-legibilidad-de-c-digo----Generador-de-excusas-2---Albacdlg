@@ -7,5 +7,10 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
-};
+
+  let who = ["Mi perro", "El profesor", "Un pájaro", "Un alien"];
+  let action = ["comió", "rompió", "perdió", "se llevó"];
+  let what = ["mi tarea", "el proyecto", "mis apuntes", "mi libro"];
+  let when = ["ayer", "esta mañana", "hace un rato", "el lunes pasado"];
+
+  
