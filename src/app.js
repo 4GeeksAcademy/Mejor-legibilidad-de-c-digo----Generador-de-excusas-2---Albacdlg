@@ -12,19 +12,20 @@ window.onload = function() {
   const what = ["mi tarea", "el proyecto", "mis apuntes", "mi libro"];
   const when = ["ayer", "esta mañana", "hace un rato", "el lunes pasado"];
 
-  function generateExcuse() {
-    const randomWho = who[Math.floor(Math.random() * who.length)];
-    const randomAction = action[Math.floor(Math.random() * action.length)];
-    const randomWhat = what[Math.floor(Math.random() * what.length)];
-    const randomWhen = when[Math.floor(Math.random() * when.length)];
-    return `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}.`;
+  function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
   }
 
-  document
-    .getElementById("generateButton")
-    .addEventListener("click", function() {
-      document.querySelector(".excuse").textContent = generateExcuse();
-    });
+  function generateExcuse() {
+    return `${getRandomElement(who)} ${getRandomElement(action)} ${getRandomElement(what)} ${getRandomElement(when)}.`;
+  }
+
+  const excuseElement = document.querySelector(".excuse");
+  const generateButton = document.getElementById("generateButton");
+
+  generateButton.addEventListener("click", () => {
+    excuseElement.textContent = generateExcuse();
+  });
 
   document.querySelector(".excuse").textContent = generateExcuse();
 };
